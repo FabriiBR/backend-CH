@@ -16,9 +16,14 @@ class Container {
   }
 
   async getAll(){
-    const contentJS = await fs.promises.readFile(this.file, 'utf8')
-    let content = JSON.parse(contentJS)
-    return content;
+    try{
+      const contentJS = await fs.promises.readFile(this.file, 'utf8')
+      let content = JSON.parse(contentJS)
+      return content;
+    } catch(err) {
+      console.error(err)
+    }
+    
   }
 
   async save(obj){
@@ -35,7 +40,12 @@ class Container {
       content = JSON.stringify(content)
       await fs.promises.writeFile(this.file, content)
     } catch(err) {
-      console.error('El archivo no es valido')
+      await fs.promises.writeFile(this.file, '[\n]')
+      let json = await fs.promises.readFile(this.file, 'utf8')
+      let content = JSON.parse(json)
+      obj.id = 1
+      content = JSON.stringify(content)
+      await fs.promises.writeFile(this.file, content)
     }
     
   }
@@ -66,6 +76,6 @@ class Container {
 const container = new Container('./container.txt');
 //container.getAll().then(obj => console.log(obj))
 //container.getById(3).then(obj => console.log(obj))
-//container.save({title: "namen", price: 10})
+container.save({title: "namen", price: 10})
 //container.deleteById(2)
 //container.deleteAll()
