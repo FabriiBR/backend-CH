@@ -63,7 +63,7 @@ class Container {
   }
 }
 
-const container = new Container('./container.json');
+const container = new Container('./container.txt');
 //container.getAll().then(obj => console.log(obj))
 //container.getById(3).then(obj => console.log(obj))
 //container.save({title: "namen", price: 10})
