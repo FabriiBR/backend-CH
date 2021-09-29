@@ -1,5 +1,5 @@
 const fs = require('fs');
-class Container {
+export class Container {
   constructor(file){
     this.file = file;
   }
@@ -73,9 +73,9 @@ class Container {
   }
 }
 
-const container = new Container('./container.txt');
+// const container = new Container('./container.txt');
 //container.getAll().then(obj => console.log(obj))
 //container.getById(3).then(obj => console.log(obj))
-container.save({title: "namen", price: 10})
+// container.save({title: "namen", price: 10})
 //container.deleteById(2)
 //container.deleteAll()
