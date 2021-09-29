@@ -1,6 +1,6 @@
-import express from 'express';
+const express = require("express");
 const server = express();
-import Container from './container.js';
+const Container = require('./container.js');
 
 const PORT = 8080;
 const container = new Container('./products.txt');
@@ -20,7 +20,3 @@ server.get('/productoRandom',(req,res,netx) => {
 server.listen(PORT, () =>{
   console.log(`Servidor corriendo en el puerto ${PORT}`)
 })
-
-const getProducts = async() =>{
-  
-}

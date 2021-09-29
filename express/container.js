@@ -1,5 +1,5 @@
-import fs from "fs"
-export default class Container {
+const fs = require("fs")
+class Container {
   constructor(file){
     this.file = file;
   }
@@ -73,9 +73,4 @@ export default class Container {
   }
 }
 
-// const container = new Container('./container.txt');
-//container.getAll().then(obj => console.log(obj))
-//container.getById(3).then(obj => console.log(obj))
-// container.save({title: "namen", price: 10})
-//container.deleteById(2)
-//container.deleteAll()
+module.exports = Container

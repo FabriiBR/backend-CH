@@ -1,23 +1,15 @@
 {
   "name": "server",
-  "version": "1.0.0",
-  "description": "nada",
-  "main": "index.js",
-  "type": "module",
+  "version": "0.0.1",
+  "description": "Express",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "dev": "node server.js"
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "minmaxaverage": "1.0.1",
-    "moment": "^2.29.1",
-    "nodemon": "^2.0.13"
+    "express": "^4.17.1"
   },
-  "devDependencies": {
-    "jest": "^27.2.1"
+  "engines": {
+    "node": "12.x"
   }
 }
