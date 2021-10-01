@@ -10,11 +10,19 @@ server.get('/',(req, res, next) =>{
 });
 
 server.get('/productos',(req,res,next) => {
-  container.getAll().then(obj => res.send(obj))
+  try {
+    container.getAll().then(obj => res.send(obj))
+  }catch(err) {
+    res.send("Error " + err)
+  }
 });
 
 server.get('/productoRandom',(req,res,netx) => {
-  container.getAll().then(obj => container.getById(Math.floor(Math.random() * obj.length+1)).then( cont => res.send(cont)))
+  try {
+    container.getAll().then(obj => res.send(obj[Math.floor(Math.random() * obj.length)]))
+  }catch(err) {
+    res.send("Error " + err)
+  }
 });
 
 server.listen(PORT, () =>{
