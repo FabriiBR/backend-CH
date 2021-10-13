@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
+  <main>
+    <h1>Lista de productos</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.forEach(product => { %>
+        <tr>
+          <th scope="row"><%= product.id%></th>
+          <td><%= product.title %></td>
+          <td><%= product.price %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
